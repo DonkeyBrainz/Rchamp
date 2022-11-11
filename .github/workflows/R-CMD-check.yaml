@@ -7,7 +7,9 @@ on:
     branches: [main, master]
 
 name: R-CMD-check
-
+env:
+    TWITCH_CLIENT_SECRET: ${{secrets.TWITCH_CLIENT_SECRET}}
+    TWITCH_CLIENT_ID: ${{secrets.TWITCH_CLIENT_ID}}
 jobs:
   R-CMD-check:
     runs-on: ubuntu-latest

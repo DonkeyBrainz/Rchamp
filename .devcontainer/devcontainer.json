@@ -1,10 +1,16 @@
+//{
+//	"name": "R (Community)",
+//	"build": {
+//		"dockerfile": "Dockerfile"
+//	}
+	
 {
 	"name": "R (rocker/r-ver base)",
 	"image": "ghcr.io/rocker-org/devcontainer/tidyverse:4",
 	"features": {
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "lts"
-		}
+		"ghcr.io/devcontainers/features/node:1": {},
+		"ghcr.io/devcontainers/features/docker-from-docker:1": {},
+		"ghcr.io/dhoeric/features/google-cloud-cli:1": {}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

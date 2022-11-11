@@ -4,12 +4,12 @@
 \name{Rchamp-package}
 \alias{Rchamp}
 \alias{Rchamp-package}
-\title{Rchamp: What the Package Does (One Line, Title Case)}
+\title{Rchamp: Get chat data from twitch clips}
 \description{
-What the package does (one paragraph).
+This package starts from setting up twitch auth, getting raw data from twitch clips and then parsing it into a useable dataframe for consumption.
 }
 \author{
-\strong{Maintainer}: First Last \email{first.last@example.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
+\strong{Maintainer}: Michael Puerto \email{michael.puerto11@gmail.com} (\href{https://orcid.org/YOUR-ORCID-ID}{ORCID})
 
 }
 \keyword{internal}
