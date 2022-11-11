@@ -4,12 +4,10 @@
 \alias{get_clip_data}
 \title{Get Clip Data}
 \usage{
-get_clip_data(clip_id, client_id)
+get_clip_data(clip_id)
 }
 \arguments{
 \item{clip_id}{the clip slug, Can be found in the url of the twitch clip.}
-
-\item{client_id}{the client id used to format http requests, This is granted from dev.twitch.tv}
 }
 \value{
 A list with clip information

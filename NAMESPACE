@@ -3,6 +3,7 @@
 export(first_function)
 export(get_clip_data)
 import(dplyr)
+import(glue)
 import(httr)
 importFrom(httr,GET)
 importFrom(httr,content)
