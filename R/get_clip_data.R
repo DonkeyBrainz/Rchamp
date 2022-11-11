@@ -1,24 +1,43 @@
 #'  Get Clip Data
-#'  @return A list with clip information
-#'  @param clip_id the clip slug. Can be found in the url of the twitch clip.
-#'  @references https://github.com/Freguglia/rTwitchAPI/blob/master/R/get_clip.R
-#'  @import dplyr
-#'  @import httr
-#' @importFrom purrr simplify_all
-#' @importFrom purrr transpose
-#' @importFrom httr content
-#' @importFrom httr GET
-#' @importFrom magrittr %>%
-#' @export
+#' 
+#' Fetch relevant clip data from twitch api using id and oauth token.
+#' 
+#'@return A list with clip information
+#' 
+#'@param clip_id the clip slug, Can be found in the url of the twitch clip.
+#' 
+#'@param client_id the client id used to format http requests, This is granted from dev.twitch.tv 
+#' 
+#'@references https://github.com/Freguglia/rTwitchAPI/blob/master/R/get_clip.R
+#' 
+#'@import dplyr
+#' 
+#'@import httr
+#' 
+#'@importFrom purrr simplify_all
+#' 
+#'@importFrom purrr transpose
+#' 
+#'@importFrom httr content
+#' 
+#'@importFrom httr GET
+#' 
+#'@importFrom magrittr %>%
+#' 
+#'@export
+#' 
 
 get_clip_data <- function(clip_id,client_id){
 
-#   client_id <- Sys.getenv("TWITCH_CLIENT_ID")
-  #client_secret <- Sys.getenv("TWITCH_CLIENT_SECRET")
-  httr::set_config(httr::add_headers('client-id'=client_id, 'Accept'='application/vnd.twitchtv.v5+json'))
+  client_id <- Sys.getenv("TWITCH_CLIENT_ID")
+  client_secret <- Sys.getenv("TWITCH_CLIENT_SECRET")
+  httr::set_config(httr::add_headers('Client-Id'=client_id, 'Authorization'= paste('Bearer',client_secret,sep = " ")))
 
-  url <- 'https://api.twitch.tv/kraken/clips/'
-  clip_data <- httr::GET(paste(url,clip_id,sep = "")) # used this to get clip-id
+  api_clip_url <- 'https://api.twitch.tv/helix/clips?id='
+  clip_data <- httr::GET(paste(api_clip_url,clip_id,sep = ""),
+  httr::add_headers(
+  'Client-Id'=client_id, 
+  'Authorization'= paste('Bearer',client_secret,sep = " "))) # used this to get clip-id
   clip_content <- httr::content(clip_data)
   #clip_data <- httr::GET(paste(url,'GracefulIntelligentKathyMikeHogu-uIO9Kd0g_KDqb4mQ',sep = "")) %>% content()
   if(!is.null(clip_data$status_code) & clip_data$status_code=="200"){

@@ -2,20 +2,21 @@
 % Please edit documentation in R/get_clip_data.R
 \name{get_clip_data}
 \alias{get_clip_data}
-\title{Get Clip Data
-@return A list with clip information
-@param clip_id the clip slug. Can be found in the url of the twitch clip.
-@references https://github.com/Freguglia/rTwitchAPI/blob/master/R/get_clip.R
-@import dplyr
-@import httr}
+\title{Get Clip Data}
 \usage{
 get_clip_data(clip_id, client_id)
 }
+\arguments{
+\item{clip_id}{the clip slug, Can be found in the url of the twitch clip.}
+
+\item{client_id}{the client id used to format http requests, This is granted from dev.twitch.tv}
+}
+\value{
+A list with clip information
+}
 \description{
-Get Clip Data
-@return A list with clip information
-@param clip_id the clip slug. Can be found in the url of the twitch clip.
-@references https://github.com/Freguglia/rTwitchAPI/blob/master/R/get_clip.R
-@import dplyr
-@import httr
+Fetch relevant clip data from twitch api using id and oauth token.
+}
+\references{
+https://github.com/Freguglia/rTwitchAPI/blob/master/R/get_clip.R
 }
