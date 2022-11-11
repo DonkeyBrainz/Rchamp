@@ -1,0 +1,14 @@
+Package: Rchamp
+Title: Get chat data from twitch clips
+Version: 0.0.0.9000
+Authors@R: 
+    person("Michael", "Puerto", , "michael.puerto11@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package starts from setting up twitch auth, getting raw data from twitch clips and then parsing it into a useable dataframe for consumption.
+License: CC0
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.1
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

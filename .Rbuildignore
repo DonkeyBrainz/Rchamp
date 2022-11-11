@@ -1,0 +1,6 @@
+^renv$
+^renv\.lock$
+^Rchamp\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^\.github$
