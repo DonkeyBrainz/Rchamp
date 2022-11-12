@@ -9,10 +9,15 @@ PKGVERS = `sed -n "s/Version: *\([^ ]*\)/\1/p" DESCRIPTION`
 all: check
 
 checkout:
+	make snapshot
 	make document
 	make build
 	make test
 	make check
+
+snapshot:
+	Rscript \
+	-e 'renv::snapshot()'
 
 document:
 	Rscript \
