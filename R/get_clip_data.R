@@ -47,11 +47,4 @@ get_clip_data <- function(clip_id){
     return(clip_content)
     }
   if(length(clip_content)<1){ print("No results for this query parameters.")}
-
 }
-
-#test<-get_clip_data('GracefulIntelligentKathyMikeHogu-uIO9Kd0g_KDqb4mQ')
-
-# curl -X POST “https://id.twitch.tv/oauth2/token?client_id=$TWITCH_CLIENT_ID&client_secret=$TWITCH_CLIENT_SECRET&grant_type=client_credentials 75”
-
-bearer_token<-httr::POST(url=glue("https://id.twitch.tv/oauth2/token?client_id={Sys.getenv('TWITCH_CLIENT_ID')}&client_secret={Sys.getenv('TWITCH_CLIENT_SECRET')}&grant_type=client_credentials"))
