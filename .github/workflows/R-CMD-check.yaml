@@ -10,6 +10,7 @@ name: R-CMD-check
 env:
     TWITCH_CLIENT_SECRET: ${{secrets.TWITCH_CLIENT_SECRET}}
     TWITCH_CLIENT_ID: ${{secrets.TWITCH_CLIENT_ID}}
+    CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
 jobs:
   R-CMD-check:
     runs-on: ubuntu-latest
