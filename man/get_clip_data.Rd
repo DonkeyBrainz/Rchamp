@@ -2,7 +2,8 @@
 % Please edit documentation in R/get_clip_data.R
 \name{get_clip_data}
 \alias{get_clip_data}
-\title{Get Clip Data}
+\title{Get Clip Data
+Fetch relevant clip data from twitch api using id and oauth token.}
 \usage{
 get_clip_data(clip_id)
 }
@@ -13,6 +14,7 @@ get_clip_data(clip_id)
 A list with clip information
 }
 \description{
+Get Clip Data
 Fetch relevant clip data from twitch api using id and oauth token.
 }
 \references{

@@ -1,41 +1,24 @@
 #'  Get Clip Data
-#' 
 #' Fetch relevant clip data from twitch api using id and oauth token.
-#' 
 #'@return A list with clip information
-#' 
 #'@param clip_id the clip slug, Can be found in the url of the twitch clip.
-#' 
 #'@references https://github.com/Freguglia/rTwitchAPI/blob/master/R/get_clip.R
-#' 
 #'@import dplyr
-#' 
 #'@import httr
-#' 
 #'@import glue
-#' 
 #'@importFrom purrr simplify_all
-#' 
 #'@importFrom purrr transpose
-#' 
 #'@importFrom httr content
-#' 
 #'@importFrom httr GET
-#' 
 #'@importFrom magrittr %>%
-#' 
 #'@export
-#' 
 
 get_clip_data <- function(clip_id){
-
   client_id <- Sys.getenv("TWITCH_CLIENT_ID")
   client_secret <- Sys.getenv("TWITCH_CLIENT_SECRET")
   bearer_token<-httr::POST(url=glue("https://id.twitch.tv/oauth2/token?client_id={Sys.getenv('TWITCH_CLIENT_ID')}&client_secret={Sys.getenv('TWITCH_CLIENT_SECRET')}&grant_type=client_credentials"))
   bearer_token <- httr::content(bearer_token)$access_token
-
   api_clip_url <- 'https://api.twitch.tv/helix/clips?id='
-
   clip_data <- httr::GET(paste(api_clip_url,clip_id,sep = ""),
   httr::add_headers(
   'Client-Id'=client_id, 
